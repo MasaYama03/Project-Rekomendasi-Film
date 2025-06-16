@@ -446,18 +446,18 @@ Tujuan penggunaan ketiga pendekatan model ini adalah untuk melakukan evaluasi da
 
       - Hasil TOP N Rekomendasi CBF
         
-      | No | Judul Film                    | Genre               | Similarity ke Film Utama | Diversity Score (1 - Similarity) |
-      | -- | ----------------------------- | ------------------- | ------------------------ | -------------------------------- |
-      | 1  | The Twin (1984)               | Comedy              | 0.4674                   | 0.5326                           |
-      | 2  | Twin Sitters (1994)           | Thriller            | 0.3457                   | 0.6543                           |
-      | 3  | Twin Falls Idaho (1999)       | Drama               | 0.3182                   | 0.6818                           |
-      | 4  | Society (1989)                | Horror, Mystery     | 0.2590                   | 0.7410                           |
-      | 5  | Punisher, The (1989)          | Action              | 0.1724                   | 0.8276                           |
-      | 6  | River of Death (1989)         | Adventure           | 0.1634                   | 0.8366                           |
-      | 7  | For All Mankind (1989)        | Documentary         | 0.1629                   | 0.8371                           |
-      | 8  | True Believer (1989)          | Crime               | 0.1399                   | 0.8601                           |
-      | 9  | Knick Knack (1989)            | Animation, Children | 0.1216                   | 0.8784                           |
-      | 10 | Inspector General, The (1949) | Musical             | 0.0000                   | 1.0000                           |
+        | No | Judul Film                              | Genre                       | Similarity ke Film Utama | Diversity Score (1 - Similarity) |
+        | -- | --------------------------------------- | --------------------------- | ------------------------ | -------------------------------- |
+        | 1  | Hot Tub Time Machine 2 (2015)           | Comedy|Sci-Fi               | 0.0900                   | 0.9100                           |
+        | 2  | True Crime (1999)                       | Crime|Thriller              | 0.0819                   | 0.9181                           |
+        | 3  | Dead Man (1995)                         | Drama|Mystery|Western       | 0.1212                   | 0.8788                           |
+        | 4  | Mission: Impossible III (2006)          | Action|Adventure|Thriller   | 0.0737                   | 0.9263                           |
+        | 5  | Carrie (2002)                           | Drama|Horror|Thriller       | 0.0644                   | 0.9356                           |
+        | 6  | Mission: Impossible - Fallout (2018)    | Action|Adventure|Thriller   | 0.0737                   | 0.9263                           |
+        | 7  | Gladiator (1992)                        | Action|Drama                | 0.1137                   | 0.8863                           |
+        | 8  | Mission: Impossible - Rogue Nation (2015) | Action|Adventure|Thriller | 0.0737                   | 0.9263                           |
+        | 9  | Sabrina (1954)                          | Comedy|Romance              | 0.1680                   | 0.8320                           |
+        | 10 | Beauty Shop (2005)                      | Comedy                      | 0.0832                   | 0.9168                           |
 
 
    Film utama yang dipilih adalah Twin Peaks (1989) dengan genre Drama dan Mystery. Rekomendasi film untuk user ini berhasil menyajikan film dari genre yang sangat bervariasi mulai dari Comedy, Thriller, Horror, Action, Documentary, hingga Musical. Setiap film yang direkomendasikan memiliki skor similarity yang cukup tinggi untuk memastikan relevansi dengan film utama, tetapi juga diimbangi dengan penalti genre agar film yang muncul tidak terlalu homogen.
