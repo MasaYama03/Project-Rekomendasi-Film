@@ -296,7 +296,18 @@ movie_content = movies_df[['movieId', 'title', 'genres']].copy()
 movie_content['genres'] = movie_content['genres'].replace("(no genres listed)", "")
  ```
 
-7. Encoding untuk Model Collaborative Filtering
+7. Membangun User-Item Matrix (TfidfVectorizer)
+    
+    Fitur teks dari film kemudian dikonversi menjadi vektor numerik menggunakan TF-IDF (Term Frequency-Inverse Document Frequency). Teknik ini menekankan kata-kata yang penting dalam konteks dokumen (film) tertentu namun jarang muncul secara global.
+
+```python
+fidf = TfidfVectorizer(token_pattern=r'[^| ]+', stop_words='english')
+tfidf_matrix = tfidf.fit_transform(filtered_movies['text_features'])
+print("Ukuran TF-IDF Matrix:", tfidf_matrix.shape)
+```
+    TF-IDF matrix yang terbentuk memiliki dimensi **[jumlah_film x jumlah_kata_unik]**, di mana setiap nilai menunjukkan pentingnya suatu kata dalam mendeskripsikan film tertentu.
+
+8. Encoding untuk Model Collaborative Filtering
 
     Model collaborative filtering membutuhkan data numerik untuk representasi pengguna dan film, juga userId dan movieId berupa angka besar (contoh: 125678, 90231). Model embedding membutuhkan input berupa integer mulai dari 0 hingga n. Oleh karena itu, userId dan movieId di-encode menjadi angka berurutan mulai dari 0. Hal ini agar model dapat memproses input dalam bentuk discrete integer index, yang merupakan format yang dibutuhkan oleh embedding layer dalam neural networks.
 
@@ -305,7 +316,7 @@ user_to_encoded = {x: i for i, x in enumerate(user_ids)}
 movie_to_encoded = {x: i for i, x in enumerate(movie_ids)}
  ```
 
-8. Normalisasi Rating
+9. Normalisasi Rating
    
     Rating dinormalisasi ke rentang 0 sampai 1 agar proses pelatihan model lebih stabil dan range rating lebih konsisten.
 
@@ -342,18 +353,7 @@ Tujuan penggunaan ketiga pendekatan model ini adalah untuk melakukan evaluasi da
 
     **Proses Detail**
 
-   1. Membangun User-Item Matrix (TfidfVectorizer)
-    
-      Fitur teks dari film kemudian dikonversi menjadi vektor numerik menggunakan TF-IDF (Term Frequency-Inverse Document Frequency). Teknik ini menekankan kata-kata yang penting dalam konteks dokumen (film) tertentu namun jarang muncul secara global.
-
-      ```python
-      fidf = TfidfVectorizer(token_pattern=r'[^| ]+', stop_words='english')
-      tfidf_matrix = tfidf.fit_transform(filtered_movies['text_features'])
-      print("Ukuran TF-IDF Matrix:", tfidf_matrix.shape)
-      ```
-      TF-IDF matrix yang terbentuk memiliki dimensi **[jumlah_film x jumlah_kata_unik]**, di mana setiap nilai menunjukkan pentingnya suatu kata dalam mendeskripsikan film tertentu.
-
-   2. Menghitung Kemiripan Antar Pengguna
+   1. Menghitung Kemiripan Antar Pengguna
       
       Cosine similarity menghitung sudut antar dua vektor (semakin kecil sudut, semakin mirip). Jika dua film memiliki genre yang sangat mirip, maka nilai cosine similarity-nya mendekati 1. Matriks cosine_sim berbentuk **[jumlah_film x jumlah_film]** → setiap nilai menunjukkan tingkat kemiripan antar dua film. Untuk setiap pengguna, sistem mencari film yang paling mirip dengan film-film yang telah mereka tonton.
 
@@ -365,7 +365,7 @@ Tujuan penggunaan ketiga pendekatan model ini adalah untuk melakukan evaluasi da
       columns=filtered_movies['title']
       )
       ```
-   3.  Output (Rekomendasi CBF)
+   2.  Output (Rekomendasi CBF)
 
       ```python
 
