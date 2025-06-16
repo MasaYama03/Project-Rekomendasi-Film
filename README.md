@@ -469,7 +469,7 @@ Tujuan penggunaan ketiga pendekatan model ini adalah untuk melakukan evaluasi da
         | movieId | avg\_rating | num\_ratings | title                   |
         | ------- | ----------- | ------------ | ----------------------- |
         | 135296  | 4.5         | 1            | The Twin (1984)         |
-        | 963     | 4.0         | 1            | Inspector General, The  |
+        | 963     | 4.0         | 1            | Inspector General, The (1949)  |
         | 95856   | 4.0         | 2            | Knick Knack (1989)      |
         | 5606    | 3.5         | 1            | Society (1989)          |
         | 2725    | 2.9         | 5            | Twin Falls Idaho (1999) |
