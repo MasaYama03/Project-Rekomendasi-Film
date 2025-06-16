@@ -446,18 +446,18 @@ Tujuan penggunaan ketiga pendekatan model ini adalah untuk melakukan evaluasi da
 
       - Hasil TOP N Rekomendasi CBF
         
-        | No | Judul Film                              | Genre                       | Similarity ke Film Utama | Diversity Score (1 - Similarity) |
-        | -- | --------------------------------------- | --------------------------- | ------------------------ | -------------------------------- |
-        | 1  | Hot Tub Time Machine 2 (2015)           | Comedy|Sci-Fi               | 0.0900                   | 0.9100                           |
-        | 2  | True Crime (1999)                       | Crime|Thriller              | 0.0819                   | 0.9181                           |
-        | 3  | Dead Man (1995)                         | Drama|Mystery|Western       | 0.1212                   | 0.8788                           |
-        | 4  | Mission: Impossible III (2006)          | Action|Adventure|Thriller   | 0.0737                   | 0.9263                           |
-        | 5  | Carrie (2002)                           | Drama|Horror|Thriller       | 0.0644                   | 0.9356                           |
-        | 6  | Mission: Impossible - Fallout (2018)    | Action|Adventure|Thriller   | 0.0737                   | 0.9263                           |
-        | 7  | Gladiator (1992)                        | Action|Drama                | 0.1137                   | 0.8863                           |
-        | 8  | Mission: Impossible - Rogue Nation (2015) | Action|Adventure|Thriller | 0.0737                   | 0.9263                           |
-        | 9  | Sabrina (1954)                          | Comedy|Romance              | 0.1680                   | 0.8320                           |
-        | 10 | Beauty Shop (2005)                      | Comedy                      | 0.0832                   | 0.9168                           |
+        | No | Judul Film                              | Genre                         | Similarity ke Film Utama | Diversity Score (1 - Similarity) |
+        | -- | --------------------------------------- | ----------------------------- | ------------------------ | -------------------------------- |
+        | 1  | Hot Tub Time Machine 2 (2015)           | Comedy, Sci-Fi                | 0.0900                   | 0.9100                           |
+        | 2  | True Crime (1999)                       | Crime, Thriller               | 0.0819                   | 0.9181                           |
+        | 3  | Dead Man (1995)                         | Drama, Mystery, Western       | 0.1212                   | 0.8788                           |
+        | 4  | Mission: Impossible III (2006)          | Action, Adventure, Thriller   | 0.0737                   | 0.9263                           |
+        | 5  | Carrie (2002)                           | Drama, Horror, Thriller       | 0.0644                   | 0.9356                           |
+        | 6  | Mission: Impossible - Fallout (2018)    | Action, Adventure, Thriller   | 0.0737                   | 0.9263                           |
+        | 7  | Gladiator (1992)                        | Action, Drama                 | 0.1137                   | 0.8863                           |
+        | 8  | Mission: Impossible - Rogue Nation (2015) | Action, Adventure, Thriller | 0.0737                   | 0.9263                           |
+        | 9  | Sabrina (1954)                          | Comedy, Romance               | 0.1680                   | 0.8320                           |
+        | 10 | Beauty Shop (2005)                      | Comedy                        | 0.0832                   | 0.9168                           |
 
 
    Film utama yang dipilih adalah Twin Peaks (1989) dengan genre Drama dan Mystery. Rekomendasi film untuk user ini berhasil menyajikan film dari genre yang sangat bervariasi mulai dari Comedy, Thriller, Horror, Action, Documentary, hingga Musical. Setiap film yang direkomendasikan memiliki skor similarity yang cukup tinggi untuk memastikan relevansi dengan film utama, tetapi juga diimbangi dengan penalti genre agar film yang muncul tidak terlalu homogen.
